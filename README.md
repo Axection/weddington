@@ -1,5 +1,9 @@
 # weddington
 
+## Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/772deaa7-bbf5-41f8-8adf-adb88d212956/deploy-status)](https://app.netlify.com/sites/senjaya/deploys)
+
 ## Build Setup
 
 ```bash
