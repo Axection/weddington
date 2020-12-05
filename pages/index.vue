@@ -1,80 +1,42 @@
-<template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        weddington
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+.hey
+  Landing(class="xl:mb-20 mb-10")
+  StaticBg(class="xl:mb-20 mb-10")
+    Intro(user="ayya" face="right" class="xl:mb-20 mb-10")
+    Intro(user="senja" face="left" class="xl:mt-20 mb-10")
+  CovidInfo(class="xl:mb-20 mb-10")
+  Gallery(class="xl:mb-20 mb-10")
+  Testimony(class="xl:mb-20 mb-10")
+  Footer
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue"
+import Landing from "~/components/Landing.vue"
+import CovidInfo from "~/components/CovidInfo.vue"
+import Intro from "~/components/Intro.vue"
+import Gallery from "~/components/Gallery.vue"
+import Testimony from "~/components/Testimony.vue"
+import Footer from "~/components/Footer.vue"
+import StaticBg from "~/components/StaticBg.vue"
 
-export default Vue.extend({})
+export default Vue.extend({
+  name: "Page",
+  components: {
+    Landing,
+    Intro,
+    CovidInfo,
+    Gallery,
+    Testimony,
+    Footer,
+    StaticBg
+  }
+})
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="stylus">
+.fullscreen
+  @apply h-screen w-screen
+  @apply bg-center bg-cover
+  // background-image url("https://lorempixel.com/1280/720")
 </style>

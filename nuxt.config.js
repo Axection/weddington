@@ -1,20 +1,22 @@
+import i18n from "./config/i18n"
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
   // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
+  target: "static",
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'weddington',
+    title: "weddington",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ]
   },
 
@@ -24,6 +26,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    "~/plugins/observer.ts"
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -32,15 +35,16 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    "@nuxtjs/tailwindcss"
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    "@nuxtjs/axios",
+    "nuxt-i18n"
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -48,5 +52,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  i18n
 }
