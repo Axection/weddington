@@ -1,7 +1,7 @@
 <template lang="pug">
 section.landing.desktop.mobile.fullscreen.bg-landing.grid.grid-cols-3.grid-rows-3
   .leading-tight.logo.text-rustic-700.row-start-1.row-span-3.col-start-2.flex.flex-col.justify-center.text-center.items-center
-    span.text-md.uppercase.mb-32.tracking-landing(class="lg:text-lg") {{ $t("wedding") }}
+    span.text-md.uppercase.mb-32.tracking-landing(class="lg:text-lg") {{ $tc("wedding") }}
     span.font-display.text-6xl(class="lg:text-lg-landing")
       | Ayya
       |
@@ -9,7 +9,7 @@ section.landing.desktop.mobile.fullscreen.bg-landing.grid.grid-cols-3.grid-rows-
     span.font-display.text-6xl(class="lg:text-lg-landing")
       |
       | Senja
-    span.text-md.uppercase.mt-32.tracking-widest(class="lg:text-lg") {{ $t("wedding_date") }}
+    span.text-md.uppercase.mt-32.tracking-widest(class="lg:text-lg") {{ $tc("wedding_date") }}
 </template>
 
 <script lang="ts">

@@ -1,8 +1,8 @@
 <template lang="pug">
 section.gallery.grid
   .gallery-title.col-start-1.row-start-1.bg-white.relative.flex.justify-center.flex-col.pl-5(class="lg:pl-10")
-    h2.text-5xl.leading-tight.text-rustic-700(class="lg:text-8xl") {{ $t("gallery") }}
-    h3.pl-5.text-xl.text-rustic-500 {{ $t("galleryDesc") }}
+    h2.text-5xl.leading-tight.text-rustic-700(class="lg:text-8xl") {{ $tc("gallery") }}
+    h3.pl-5.text-xl.text-rustic-500 {{ $tc("galleryDesc") }}
   .gallery-slash.col-start-1.row-start-2.w-56.drop-shadow.pointer-events-none.relative.hidden(class="lg:block lg:col-start-2 lg:row-start-1")
     svg.h-full.w-24(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none")
       polygon(fill="white" points="0,0 100,0 30,100 0,100")

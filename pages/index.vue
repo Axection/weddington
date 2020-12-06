@@ -2,9 +2,9 @@
 .hey
   Landing(class="xl:mb-20 mb-10")
   StaticBg(class="xl:mb-20 mb-10")
-    Intro(:full-name="ayyaDetails.fullName" :description="ayyaDetails.description" :nick-name="ayyaDetails.nickName" face="right" :status="$t('bride')")
+    Intro(:full-name="ayyaDetails.fullName" :description="ayyaDetails.description" :nick-name="ayyaDetails.nickName" face="right" :status="$tc('bride')")
     .big-space
-    Intro(:full-name="senjaDetails.fullName" :description="senjaDetails.description" :nick-name="senjaDetails.nickName" face="left" :status="$t('groom')")
+    Intro(:full-name="senjaDetails.fullName" :description="senjaDetails.description" :nick-name="senjaDetails.nickName" face="left" :status="$tc('groom')")
     .big-space
   CovidInfo(class="xl:mb-20 mb-10")
   Gallery(class="xl:mb-20 mb-10")
@@ -25,7 +25,7 @@ import StaticBg from "~/components/StaticBg.vue"
 export interface IntroDetail {
   nickName: string
   fullName: string
-  description?: LocaleMessages | string
+  description?: | string
 }
 
 export default Vue.extend({
@@ -44,14 +44,14 @@ export default Vue.extend({
       return {
         nickName: "Ayya",
         fullName: "Wayan Nur Pangesti",
-        description: this.$t("ayyaDesc")
+        description: this.$tc("ayyaDesc")
       }
     },
     senjaDetails() : IntroDetail {
       return {
         nickName: "Senja",
         fullName: "Hafidh Rashemi Rafsanjany",
-        description: this.$t("senjaDesc")
+        description: this.$tc("senjaDesc")
       }
     }
   }
