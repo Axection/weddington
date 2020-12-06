@@ -9,6 +9,7 @@
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
         h3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
         p.text-md.mt-4.text-rustic-500(class="lg:text-lg lg:mt-8") "{{ description}}"
+        span.text-left.text-right
 </template>
 
 <script lang="ts">
