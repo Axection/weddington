@@ -2,11 +2,11 @@
 footer.w-full-h-auto.pb-5
   .flex.justify-between
     .div
-    .henlo
+    .henlo.text-rustic-300
       span Beautifully handcrafted by
       |
       |
-      a.underline.font-semibold(href="https://section.esque.id" target="_blank") akasection
+      a.text-rustic-600.underline.font-semibold(href="https://section.esque.id" target="_blank") akasection
     .div
 </template>
 

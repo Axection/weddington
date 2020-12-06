@@ -14,6 +14,20 @@ module.exports = {
           900: "#432e20"
           // 950: "#221710"
         }
+      },
+      fontSize: {
+        "7xl": "4.5rem",
+        "8xl": "6rem",
+        superlarge: "8rem",
+        "sm-landing": "8rem",
+        "lg-landing": "10rem"
+      },
+      letterSpacing: {
+        landing: "0.3rem"
+      },
+      fontFamily: {
+        sans: ["Glacial", "ui-sans-serif", "system-ui"],
+        display: ["Arsenal", "Segoe UI", "Roboto", "sans-serif"]
       }
     }
   }

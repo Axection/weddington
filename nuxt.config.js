@@ -22,6 +22,8 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    "~/assets/common.styl",
+    "vue-pure-lightbox/dist/VuePureLightbox.css"
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -44,7 +46,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    "nuxt-i18n"
+    ["nuxt-i18n", i18n]
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -52,6 +54,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: [
+
+    ]
   },
 
   i18n

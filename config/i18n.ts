@@ -1,17 +1,15 @@
 export default {
   locales: ["en", "id"],
-  strategy: "prefix_except_default",
+  vueI18nLoader: true,
+  strategy: "prefix",
+  defaultLocale: "en",
   detectBrowserLanguage: {
     useCookie: true,
     cookieKey: "lang_redir",
     onlyOnRoot: true // recommended
   },
-  messages: {
-    en: {
-
-    },
-    id: {
-
-    }
+  vueI18n: {
+    fallbackLocale: "en"
+    // messagaes:
   }
 }
