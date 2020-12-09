@@ -70,7 +70,7 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 $bezier = cubic-bezier(0.36, 0.5, 0.27, 0.96)
 $opacity_b = cubic-bezier(0.88, 0.02, 0.38, 0.9)
-$latency = 325ms
+$latency = 72ms
 
 .intro-content
   transition opacity 667ms $opacity_b
