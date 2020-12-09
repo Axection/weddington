@@ -1,9 +1,9 @@
 <template lang="pug">
-.bg-center.bg-cover.mx-auto(class="lg:top-0 lg:sticky")
-  .grid.grid-cols-5.grid-rows-1.h-full
-    .img-container.h-screen.row-start-1.col-span-2.flex.justify-center(:class="`col-start-${face === 'right' ? '1' : 4}`")
-      img(src="https://lorempixel.com/600/1080")
-    .h-screen.row-start-1.col-span-3.bg-white(:class="`col-start-${face === 'left' ? '1' : '3'} slashing-${face}`")
+.bg-center.bg-cover.mx-auto.overflow-hidden(class="lg:top-0 lg:sticky" v-observe-visibility="observer")
+  .intro-content.grid.grid-rows-5.grid-cols-1.h-screen(:class="`${(!show || forceHide ) ? 'hide' : ''} ${face} lg:h-full lg:grid-cols-5 lg:grid-rows-1`")
+    .img-container.flex.justify-center.col-start-1.row-start-1.row-span-2(:class="`lg:h-screen lg:row-start-1 lg:col-span-2 lg:col-start-${face === 'right' ? '1' : 4}`")
+      img.object-cover.object-top(class="lg:object-contain" src="https://lorempixel.com/600/1080")
+    .description.bg-white.col-start-1.row-start-3.row-span-3(:class="`lg:h-screen lg:row-start-1 lg:col-span-3 lg:col-start-${face === 'left' ? '1' : '3'} slashing-${face}`")
       .text-rustic-600(:class="`px-5 py-10 lg:px-20 lg:py-40 text-${face}`")
         span.text-rustic-300.text-md.leading-none(class="lg:text-lg") {{ status }}
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
@@ -38,16 +38,65 @@ export default Vue.extend({
     status: {
       type: String,
       default: "Bride"
+    },
+    forceHide: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      show: false
+    }
+  },
+  computed: {
+    observer() {
+      return {
+        callback: (isVisible) => {
+          this.$emit("forceHide", isVisible)
+          if (this.show !== isVisible) { this.show = isVisible }
+        },
+        intersection: {
+          throttle: 150,
+          root: document,
+          threshold: 0.3
+        }
+      }
     }
   }
 })
 </script>
 
 <style lang="stylus" scoped>
-.slashing
-  &-left
-    clip-path polygon(0 0, 60% 0, 100% 100%, 0 100%)
-  &-right
-    clip-path polygon(0 0, 100% 0, 100% 100%, 40% 100%)
+$bezier = cubic-bezier(0.36, 0.5, 0.27, 0.96)
+$opacity_b = cubic-bezier(0.88, 0.02, 0.38, 0.9)
+$latency = 325ms
 
+.intro-content
+  transition opacity 667ms $opacity_b
+  transition-delay $latency
+
+  .img-container
+    transition transform 500ms $bezier
+    transition-delay $latency
+  .description
+    transition transform 875ms $bezier
+    transition-delay $latency
+  &.hide
+    .img-container
+      transform translateY(2.5rem)
+    .description
+      transform translateX(3.75rem)
+    &.left .description
+      transform translateX(-3.75rem)
+
+@screen lg
+  .slashing
+    &-left
+      clip-path polygon(0 0, 60% 0, 100% 100%, 0 100%)
+    &-right
+      clip-path polygon(0 0, 100% 0, 100% 100%, 40% 100%)
+
+.hide
+  opacity 0
 </style>

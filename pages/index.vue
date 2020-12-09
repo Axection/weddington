@@ -1,10 +1,10 @@
 <template lang="pug">
 .hey
-  Landing(class="xl:mb-20 mb-10")
+  Landing
   StaticBg(class="xl:mb-20 mb-10")
-    Intro(:full-name="ayyaDetails.fullName" :description="ayyaDetails.description" :nick-name="ayyaDetails.nickName" face="right" :status="$tc('bride')")
+    Intro(:full-name="ayyaDetails.fullName" :description="ayyaDetails.description" :nick-name="ayyaDetails.nickName" face="right" :status="$tc('bride')" :forceHide="belowIsShown")
     .big-space
-    Intro(:full-name="senjaDetails.fullName" :description="senjaDetails.description" :nick-name="senjaDetails.nickName" face="left" :status="$tc('groom')")
+    Intro(:full-name="senjaDetails.fullName" :description="senjaDetails.description" :nick-name="senjaDetails.nickName" face="left" :status="$tc('groom')" @forceHide="belowIsShown = $event")
     .big-space
   CovidInfo(class="xl:mb-20 mb-10")
   Gallery(class="xl:mb-20 mb-10")
@@ -38,6 +38,11 @@ export default Vue.extend({
     Testimony,
     Footer,
     StaticBg
+  },
+  data() {
+    return {
+      belowIsShown: false
+    }
   },
   computed: {
     ayyaDetails() : IntroDetail {
