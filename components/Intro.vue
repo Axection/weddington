@@ -9,6 +9,12 @@
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
         h3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
         p.text-md.mt-4.text-rustic-500(class="lg:text-lg lg:mt-8") "{{ description}}"
+        h3.mt-4.text-rustic-300.text-md(class="lg:text-xl") Putra pertama dari
+        .text-md.text-rustic-500(class="lg:text-lg")
+          p (P)
+          span Nama ortu
+          p (PP)
+          span Nama ortu
         span.text-left.text-right
 </template>
 
