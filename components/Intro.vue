@@ -1,9 +1,13 @@
 <template lang="pug">
 .bg-center.bg-cover.mx-auto.overflow-hidden(class="lg:top-0 lg:sticky" v-observe-visibility="observer")
   .intro-content.grid.grid-rows-5.grid-cols-1.h-screen(:class="`${(!show || forceHide ) ? 'hide' : ''} ${face} lg:h-full lg:grid-cols-5 lg:grid-rows-1`")
-    .img-container.flex.justify-center.col-start-1.row-start-1.row-span-2(:class="`lg:h-screen lg:row-start-1 lg:col-span-2 lg:col-start-${face === 'right' ? '1' : 4}`")
+    .img-container.flex.justify-center.col-start-1.row-start-1.row-span-2(
+      :class="`lg:h-screen lg:row-start-1 lg:col-span-2 ${face === 'right' ? 'lg:col-start-1' : 'lg:col-start-4'}`"
+    )
       img.object-cover.object-top(class="lg:object-contain" src="https://lorempixel.com/600/1080")
-    .description.bg-white.col-start-1.row-start-3.row-span-3(:class="`lg:h-screen lg:row-start-1 lg:col-span-3 lg:col-start-${face === 'left' ? '1' : '3'} slashing-${face}`")
+    .description.bg-white.col-start-1.row-start-3.row-span-3(
+      :class="`lg:h-screen lg:row-start-1 lg:col-span-3 ${face === 'left' ? 'lg:col-start-1' : 'lg:col-start-3'} slashing-${face}`"
+    )
       .text-rustic-600(:class="`px-5 py-10 lg:px-20 lg:py-40 text-${face}`")
         span.text-rustic-300.text-md.leading-none(class="lg:text-lg") {{ status }}
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
