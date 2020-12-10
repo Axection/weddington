@@ -13,17 +13,18 @@
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
         h3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
         p.text-md.mt-4.text-rustic-500(class="lg:text-lg lg:mt-8") "{{ description}}"
-        h3.mt-4.text-rustic-300.text-md(class="lg:text-xl") Putra pertama dari
-        .text-md.text-rustic-500(class="lg:text-lg")
-          p (P)
-          span Nama ortu
-          p (PP)
-          span Nama ortu
+        h3.mt-4.text-rustic-300.text-md(class="lg:text-xl") {{ childOf }}
+        .flex.gap-x-4.flex-col.text-md.text-rustic-500(:class="`lg:text-lg ${face === 'left' ? 'items-start lg:justify-start ' : 'items-end lg:justify-end'}`")
+          template(v-for="parent in parents")
+            .parents.flex.flex-row.gap-x-1.content-center.items-center
+              img(:src="parent.imageUrl" width="32")
+              span {{ parent.name }}
         span.text-left.text-right
 </template>
 
 <script lang="ts">
 import Vue from "vue"
+import { Parent } from "~/pages/index.vue"
 
 export type Facing = "left" | "right"
 export default Vue.extend({
@@ -52,6 +53,14 @@ export default Vue.extend({
     forceHide: {
       type: Boolean,
       default: false
+    },
+    childOf: {
+      type: String,
+      required: true
+    },
+    parents: {
+      type: Array as () => Parent[],
+      required: true
     }
   },
   data() {
