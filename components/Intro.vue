@@ -58,7 +58,7 @@ export default Vue.extend({
   computed: {
     observer() {
       return {
-        callback: (isVisible) => {
+        callback: (isVisible: boolean) => {
           this.$emit("forceHide", isVisible)
           if (this.show !== isVisible) { this.show = isVisible }
         },
