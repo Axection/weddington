@@ -1,7 +1,7 @@
 <template lang="pug">
 section.bg-fixed.fullbg.bg-cover.bg-center
   .bg-white.w-full.leftovers
-    p.text-rustic-500.text-lg.text-center.py-10.tracking-widest(class="lg:text-4xl") {{ $tc('bridegroom') }}
+    p.text-rustic-500.text-lg.uppercase.text-center.py-10.tracking-landing(class="lg:text-xl") {{ $tc('bridegroom') }}
   slot(name="default")
 </template>
 
@@ -14,7 +14,7 @@ export default Vue.extend({
 
 <style lang="stylus" scoped>
 .fullbg
-  background-image url("https://lorempixel.com/1366/768")
+  background-image url("~assets/images/Intro.jpg")
 
 .leftovers:after
   content ''

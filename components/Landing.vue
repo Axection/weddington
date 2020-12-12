@@ -1,15 +1,17 @@
 <template lang="pug">
-section.landing.desktop.mobile.fullscreen.bg-landing.grid.grid-cols-3.grid-rows-3
-  .leading-tight.logo.text-rustic-700.row-start-1.row-span-3.col-start-2.flex.flex-col.justify-center.text-center.items-center
-    span.text-md.uppercase.mb-32.tracking-landing(class="lg:text-lg") {{ $tc("wedding") }}
+section.leading-tight.text-center.logo.text-rustic-700.landing.desktop.mobile.fullscreen.bg-landing.grid.grid-cols-3.grid-rows-mobile(class="lg:grid-rows-3")
+  .row-start-1.col-start-2.flex.flex-col.justify-center.items-center
+    span.text-md.uppercase.tracking-landing(class="lg:text-lg") {{ $tc("wedding") }}
+  .row-start-2.col-start-2.flex.flex-col.justify-center.items-center
     span.font-display.text-6xl(class="lg:text-8xl")
       | Ayya
       |
-    span.font-display.text-3xl.ampersand(class="lg:text-6xl" style="transform: translateY(15px)") &amp;
+    span.font-display.text-3xl.ampersand(class="lg:text-6xl" style="transform: translateY(0.5rem)") &amp;
     span.font-display.text-6xl(class="lg:text-8xl")
       |
       | Senja
-    span.text-md.uppercase.mt-32.tracking-widest(class="lg:text-lg") {{ $tc("wedding_date") }}
+  .row-start-3.col-start-2.flex.flex-col.justify-center.items-center
+    span.text-md.uppercase.tracking-widest(class="lg:text-lg") {{ $tc("wedding_date") }}
 </template>
 
 <script lang="ts">
@@ -20,8 +22,10 @@ export default Vue.extend({
 </script>
 
 <style lang="stylus" scoped>
+.grid-rows-mobile
+  grid-template-rows 1fr 3fr 2fr
 .bg-landing
-  background-image linear-gradient(#ffffffaa, #ffffffaa), url(https://lorempixel.com/1280/720)
+  background-image url('~assets/images/landing.jpg')
 
   &:after
     content ''
@@ -31,6 +35,9 @@ export default Vue.extend({
     @apply h-20
     background linear-gradient(to top, white, transparent)
 
+@screen lg
+  .bg-landing
+    background-position center 35%
 .landing
   @apply bg-black.grid
   &.desktop

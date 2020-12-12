@@ -4,20 +4,20 @@
     .img-container.flex.justify-center.col-start-1.row-start-1.row-span-2(
       :class="`lg:h-screen lg:row-start-1 lg:col-span-2 ${face === 'right' ? 'lg:col-start-1' : 'lg:col-start-4'}`"
     )
-      img.object-cover.object-top(class="lg:object-contain" src="https://lorempixel.com/600/1080")
+      img.object-cover.object-top(class="lg:object-contain" :src="personSrc" style="filter: brightness(1.4)")
     .description.bg-white.col-start-1.row-start-3.row-span-3(
       :class="`lg:h-screen lg:row-start-1 lg:col-span-3 ${face === 'left' ? 'lg:col-start-1' : 'lg:col-start-3'} slashing-${face}`"
     )
-      .text-rustic-600(:class="`px-5 py-10 lg:px-20 lg:py-40 text-${face}`")
+      .text-rustic-600.text-center(:class="`px-5 py-10 lg:px-20 lg:py-40 lg:text-${face}`")
         span.text-rustic-300.text-md.leading-none(class="lg:text-lg") {{ status }}
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
         h3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
-        p.text-md.mt-4.text-rustic-500(class="lg:text-lg lg:mt-8") "{{ description}}"
+        p.text-md.mt-4.text-rustic-500.hidden(class="lg:text-lg lg:mt-8 lg:hidden") "{{ description }}"
         h3.mt-4.text-rustic-300.text-md(class="lg:text-xl") {{ childOf }}
-        .flex.gap-x-4.flex-col.text-md.text-rustic-500(:class="`lg:text-lg ${face === 'left' ? 'items-start lg:justify-start ' : 'items-end lg:justify-end'}`")
+        .flex.gap-x-4.flex-col.text-md.text-rustic-500.items-center(:class="`lg:text-lg ${face === 'left' ? 'lg:items-start lg:justify-start ' : 'lg:items-end lg:justify-end'}`")
           template(v-for="parent in parents")
-            .parents.flex.flex-row.gap-x-1.content-center.items-center
-              img(:src="parent.imageUrl" width="32")
+            .parents.flex.flex-shrink-0.flex-grow-0.gap-x-1.items-center.flex-col(class="lg:flex-row lg:content-center lg:").mb-1
+              img.rounded-full(:src="parent.imageUrl" width="64")
               span {{ parent.name }}
         span.text-left.text-right
 </template>
@@ -41,6 +41,10 @@ export default Vue.extend({
     description: {
       type: String as () => string,
       default: ""
+    },
+    personSrc: {
+      type: String as () => string,
+      required: true
     },
     face: {
       type: String as () => Facing,

@@ -1,13 +1,13 @@
 <template lang="pug">
-footer.w-full-h-auto.pb-5
-  .flex.justify-between
-    .div
-    .henlo.text-rustic-300
-      span Beautifully handcrafted by
-      |
-      |
-      a.text-rustic-600.underline.font-semibold(href="https://section.esque.id" target="_blank") akasection
-    .div
+footer.text-rustic-300.w-full-h-auto.pb-5.text-center
+  p Beautifully handcrafted by
+  p
+    |
+    a.text-rustic-600.underline.font-semibold(href="https://section.esque.id" target="_blank") akasection
+    |
+    | &amp;
+    |
+    a.text-rustic-600.underline.font-semibold(href="https://www.facebook.com/aiia.miewmiew" target="_blank") ayynurp
 </template>
 
 <script lang="ts">

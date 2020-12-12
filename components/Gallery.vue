@@ -9,11 +9,11 @@ section.gallery.grid
   .gallery-masonry.col-start-1.row-start-3.h-full.overflow-x-scroll.overflow-y-hidden(class="py-5 lg:py-20 lg:row-start-1 lg:col-start-3")
     .h-full.flex.flex-col.justify-center
       .masonry.flex.flex-none.flex-row.pl-5(class="h-1/3 lg:pl-20")
-        GalleryImage(v-for="n in 10")
+        GalleryImage(v-for="n in split(galleryList, 3, 0)" :src="n.src" :full-src="n.fullSrc")
       .masonry.flex.flex-none.flex-row.pl-5(class="h-1/3 lg:pl-16")
-        GalleryImage(v-for="n in 9")
+        GalleryImage(v-for="n in split(galleryList, 3, 1)" :src="n.src" :full-src="n.fullSrc")
       .masonry.flex.flex-none.flex-row.pl-5(class="h-1/3 lg:pl-12")
-        GalleryImage(v-for="n in 11")
+        GalleryImage(v-for="n in split(galleryList, 3, 2)" :src="n.src" :full-src="n.fullSrc")
 </template>
 
 <script lang="ts">
@@ -24,6 +24,19 @@ export default Vue.extend({
   name: "Gallery",
   components: {
     GalleryImage
+  },
+  props: {
+    galleryList: {
+      type: Array,
+      required: true
+    }
+  },
+  methods: {
+    split(list: object[], target: number, part: number) : object[] {
+      const partSize: number = Math.ceil(list.length / target)
+      const targetPart = Math.min(target - 1, part)
+      return list.filter((_, idx) => idx >= (partSize * targetPart) && idx < (partSize * targetPart) + partSize)
+    }
   }
 })
 </script>
@@ -58,11 +71,11 @@ export default Vue.extend({
 {
   "en": {
     "gallery": "Gallery",
-    "galleryDesc": "Our gallery hahaha"
+    "galleryDesc": "Our story together"
   },
   "id": {
     "gallery": "Galeri",
-    "galleryDesc": "Galeri kami bersama"
+    "galleryDesc": "Cerita kami bersama"
   }
 }
 </i18n>
