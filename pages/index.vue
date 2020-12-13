@@ -27,6 +27,7 @@
       :parents="senjaParents"
     )
     .big-space
+  Site(class="xl:mb-20 mb-10")
   CovidInfo(class="xl:mb-20 mb-10")
   Gallery(class="xl:mb-20 mb-10" :gallery-list="galleryList")
   Testimony(class="xl:mb-20 mb-10")
@@ -43,6 +44,7 @@ import Testimony from "~/components/Testimony.vue"
 import Footer from "~/components/Footer.vue"
 import StaticBg from "~/components/StaticBg.vue"
 import LanguageSelector from "~/components/Language.vue"
+import Site from "~/components/Site.vue"
 
 export interface IntroDetail {
   nickName: string
@@ -66,7 +68,8 @@ export default Vue.extend({
     Testimony,
     Footer,
     StaticBg,
-    LanguageSelector
+    LanguageSelector,
+    Site
   },
   asyncData() {
     const importAll = (r : __WebpackModuleApi.RequireContext, label: string) => r.keys().map(key => ({ fullSrc: r(key), fileName: key.replace("./", ""), label }))

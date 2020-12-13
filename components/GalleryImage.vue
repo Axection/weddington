@@ -35,6 +35,7 @@ $scale_lg = 4
 
 @screen lg
   .gallery-item
+    transition filter 300ms
     width 4rem * $scale_lg
     height 3rem * $scale_lg
 
