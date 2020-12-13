@@ -1,7 +1,7 @@
 <template lang="pug">
 .testimony.text-center.px-8(class="lg:px-20")
   h2.py-4.text-rustic-500.text-lg(class="lg:text-2xl") {{ $tc('comment') }}
-  disqus
+  disqus(:lang="$i18n.locale")
 </template>
 
 <script lang="ts">
