@@ -6,7 +6,7 @@ const generalMeta = {
   description: "Wedding announcement of Ayya and Senja. Will be held at Serambi 17 Cipayung, East Jakarta."
 }
 export default {
-  ssr: true,
+  ssr: false,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
@@ -18,15 +18,15 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: generalMeta.description },
-
       { hid: "twitter:title", property: "twitter:title", content: generalMeta.title },
       { hid: "twitter:description", property: "twitter:description", content: generalMeta.description },
-
       { hid: "og:title", property: "og:title", content: generalMeta.title },
       { hid: "og:url", property: "og:url", content: generalMeta.url },
       { hid: "og:site_name", property: "og:site_name", content: generalMeta.siteName },
       { hid: "og:description", property: "og:description", content: generalMeta.description },
-      { hid: "og:type", property: "og:type", content: "website" }
+      { hid: "og:type", property: "og:type", content: "website" },
+      { hid: "og:image", property: "og:image", content: "/og_image.png" },
+      { hid: "twitter:image", property: "twitter:image", content: "/og_image.png" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
