@@ -4,16 +4,16 @@ main
 </template>
 
 <script lang="ts">
+
 import Vue from "vue"
-const ogImage: string = require("~/assets/images/og_image.png")
 
 export default Vue.extend({
   name: "Default",
   head() {
     return {
       meta: [
-        { hid: "og:image", property: "og:image", content: ogImage },
-        { hid: "twitter:image", property: "twitter:image", content: ogImage }
+        { hid: "og:image", property: "og:image", content: require("~/assets/images/og_image.png") },
+        { hid: "twitter:image", property: "twitter:image", content: require("~/assets/images/og_image.png") }
       ]
     }
   }

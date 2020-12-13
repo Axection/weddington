@@ -81,7 +81,7 @@ export default Vue.extend({
         },
         intersection: {
           throttle: 150,
-          root: document,
+          // root: document,
           threshold: 0.3
         }
       }

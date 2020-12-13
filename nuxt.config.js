@@ -6,8 +6,7 @@ const generalMeta = {
   description: "Wedding announcement of Ayya and Senja. Will be held at Serambi 17 Cipayung, East Jakarta."
 }
 export default {
-  // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
+  ssr: true,
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
@@ -35,7 +34,7 @@ export default {
     ]
   },
 
-  // Global CSS (https://go.nuxtjs.dev/config-css)
+  // Global CSS (https://go.nuxtjs.dev/config -css)
   css: [
     "~/assets/common.styl",
     "vue-pure-lightbox/dist/VuePureLightbox.css"
