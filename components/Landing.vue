@@ -25,7 +25,7 @@ export default Vue.extend({
 .grid-rows-mobile
   grid-template-rows 1fr 3fr 2fr
 .bg-landing
-  background-image url('~assets/images/landing.jpg')
+  background-image url('~assets/images/Landing.jpg')
 
   &:after
     content ''
