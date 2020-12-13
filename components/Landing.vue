@@ -12,6 +12,7 @@ section.leading-tight.text-center.logo.text-rustic-700.landing.desktop.mobile.fu
       | Senja
   .row-start-3.col-start-2.flex.flex-col.justify-center.items-center
     span.text-md.uppercase.tracking-widest(class="lg:text-lg") {{ $tc("wedding_date") }}
+    span.mt-1.text-md.tracking-wide Serambi 17, Cipayung
 </template>
 
 <script lang="ts">

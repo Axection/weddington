@@ -12,8 +12,7 @@ export default Vue.extend({
   head() {
     return {
       meta: [
-        { hid: "og:image", property: "og:image", content: require("~/assets/images/og_image.png") },
-        { hid: "twitter:image", property: "twitter:image", content: require("~/assets/images/og_image.png") }
+
       ]
     }
   }
