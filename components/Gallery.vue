@@ -71,11 +71,11 @@ export default Vue.extend({
 {
   "en": {
     "gallery": "Gallery",
-    "galleryDesc": "Our story together"
+    "galleryDesc": "Our story together..."
   },
   "id": {
     "gallery": "Galeri",
-    "galleryDesc": "Cerita kami bersama"
+    "galleryDesc": "Cerita kami bersama..."
   }
 }
 </i18n>

@@ -1,5 +1,6 @@
 <template lang="pug">
-.hey
+.relative.hey
+  LanguageSelector
   Landing
   StaticBg(class="xl:mb-20 mb-10")
     Intro(
@@ -41,6 +42,7 @@ import Gallery from "~/components/Gallery.vue"
 import Testimony from "~/components/Testimony.vue"
 import Footer from "~/components/Footer.vue"
 import StaticBg from "~/components/StaticBg.vue"
+import LanguageSelector from "~/components/Language.vue"
 
 export interface IntroDetail {
   nickName: string
@@ -63,7 +65,8 @@ export default Vue.extend({
     Gallery,
     Testimony,
     Footer,
-    StaticBg
+    StaticBg,
+    LanguageSelector
   },
   asyncData() {
     const importAll = (r : __WebpackModuleApi.RequireContext, label: string) => r.keys().map(key => ({ fullSrc: r(key), fileName: key.replace("./", ""), label }))
