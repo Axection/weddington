@@ -5,7 +5,7 @@ main
 
 <script lang="ts">
 import Vue from "vue"
-import ogImage from "~/assets/images/og_image.png"
+const ogImage: string = require("~/assets/images/og_image.png")
 
 export default Vue.extend({
   name: "Default",
