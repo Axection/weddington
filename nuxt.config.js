@@ -1,5 +1,11 @@
 import i18n from "./config/i18n"
 
+const generalMeta = {
+  siteName: "Ayya & Senja Wedding Announcement",
+  title: "Ayya & Senja | The Wedding - 2020.12.19",
+  description: "Wedding announcement of Ayya and Senja. Will be held at Serambi 17 Cipayung, East Jakarta.",
+  image: "/og_image.png"
+}
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -9,14 +15,25 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "Ayya & Senja | The Wedding - 2020.12.19",
+    title: generalMeta.title,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: generalMeta.description },
+      { hid: "twitter:image", property: "twitter:image", content: generalMeta.image },
+      { hid: "twitter:title", property: "twitter:title", content: generalMeta.title },
+      { hid: "twitter:description", property: "twitter:description", content: generalMeta.description },
+
+      { hid: "og:title", property: "og:title", name: "og:title", content: generalMeta.title },
+      { hid: "og:url", property: "og:url", name: "og:url", content: generalMeta.url },
+      { hid: "og:site_name", property: "og:site_name", content: generalMeta.siteName },
+      { hid: "og:description", property: "og:description", name: "og:description", content: generalMeta.description },
+      { hid: "og:type", property: "og:type", name: "og:type", content: "website" },
+      { hid: "og:image", property: "og:image", content: generalMeta.image }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
+      { rel: "manifest", href: "/manifest.json" }
     ]
   },
 

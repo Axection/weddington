@@ -11,9 +11,9 @@
       .text-rustic-600.text-center(:class="`px-5 py-10 lg:px-20 lg:py-40 ${face === 'left' ? 'lg:text-left' : 'lg:text-right'}`")
         span.text-rustic-300.text-md.leading-none(class="lg:text-lg") {{ status }}
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
-        h3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
+        h3.mb-3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
         p.text-md.mt-4.text-rustic-500.hidden(class="lg:text-lg lg:mt-8 lg:hidden") "{{ description }}"
-        h3.mt-4.text-rustic-300.text-md(class="lg:text-xl") {{ childOf }}
+        h3.my-1.text-rustic-300.text-md(class="lg:text-xl") {{ childOf }}
         .flex.gap-x-4.flex-col.text-md.text-rustic-500.items-center(:class="`lg:text-lg ${face === 'left' ? 'lg:items-start lg:justify-start ' : 'lg:items-end lg:justify-end'}`")
           template(v-for="parent in parents")
             .parents.flex.flex-shrink-0.flex-grow-0.gap-x-1.items-center.flex-col(class="lg:flex-row lg:content-center lg:").mb-1

@@ -130,7 +130,7 @@ export default Vue.extend({
 .fullscreen
   @apply h-screen w-auto
   @apply bg-center bg-cover
-  // background-image url("https://lorempixel.com/1280/720")
+  @apply relative
 
 .big-space
   height calc(theme('spacing.20') * 0)
