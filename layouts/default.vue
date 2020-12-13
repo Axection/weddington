@@ -3,6 +3,23 @@ main
   nuxt
 </template>
 
+<script lang="ts">
+import Vue from "vue"
+import ogImage from "~/assets/images/og_image.png"
+
+export default Vue.extend({
+  name: "Default",
+  head() {
+    return {
+      meta: [
+        { hid: "og:image", property: "og:image", content: ogImage },
+        { hid: "twitter:image", property: "twitter:image", content: ogImage }
+      ]
+    }
+  }
+})
+</script>
+
 <style>
 html {
   -ms-text-size-adjust: 100%;
