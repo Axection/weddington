@@ -8,7 +8,7 @@
     .description.bg-white.col-start-1.row-start-3.row-span-3(
       :class="`lg:h-screen lg:row-start-1 lg:col-span-3 ${face === 'left' ? 'lg:col-start-1' : 'lg:col-start-3'} slashing-${face}`"
     )
-      .text-rustic-600.text-center(:class="`px-5 py-10 lg:px-20 lg:py-40 lg:text-${face}`")
+      .text-rustic-600.text-center(:class="`px-5 py-10 lg:px-20 lg:py-40 ${face === 'left' ? 'lg:text-left' : 'lg:text-right'}`")
         span.text-rustic-300.text-md.leading-none(class="lg:text-lg") {{ status }}
         h2.text-4xl.leading-tight(class="lg:text-6xl") {{ nickName }}
         h3.text-md.leading-tight(class="lg:text-xl") {{ fullName }}
