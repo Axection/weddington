@@ -1,12 +1,11 @@
 <template lang="pug">
 .site.pt-20(class="lg:px-20")
   .bg-white.px-5.pt-5.pb-8.text-center.text-rustic-800
-    h2.text-rustic-500.text-xl(class="lg:text-6xl") Agenda
+    h2.text-rustic-500.text-xl(class="lg:text-6xl") {{ $tc('akad') }}
     h3.mt-1.text-rustic-300.text-lg(class="lg:text-2xl") {{ $tc('location') }}
     a(href="https://www.instagram.com/serambi_17/" target="_blank" class="hover:underline semi") Gedung Serambi 17
       |  {{ $tc('district') }}
     h3.mt-1.text-rustic-300.text-lg(class="lg:text-2xl") {{ $tc('time') }}
-    p {{ $tc('akad') }}
     p {{ $tc('akad_time') }}
 
 </template>
